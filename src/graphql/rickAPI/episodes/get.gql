@@ -1,0 +1,13 @@
+#import "./fragment.gql"
+
+query episodes($page: Int, $filter: FilterEpisode) {
+  episodes(page: $page, filter: $filter) {
+    info {
+      count,
+      pages
+    }
+    results {
+      ...Episode
+    }
+  }
+}
